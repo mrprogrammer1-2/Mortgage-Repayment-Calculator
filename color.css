@@ -1,0 +1,52 @@
+:root {
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--Slate-100);
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 700px;
+    min-height: 480px;
+    display: flex;
+    background-color: var(--White);
+    border-radius: 20px;
+}
+
+.right, .left {
+    flex: 1;
+}
+
+.right {
+    position: relative;
+    padding: 20px;
+}
+
+.right a {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: var(--Slate-300);
+}
+
+form {
+    margin: 25px 0 15px;
+}
