@@ -14,24 +14,13 @@
 
     <title>Frontend Mentor | Mortgage repayment calculator</title>
     <link rel="stylesheet" href="color.css" />
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    <div class="mortgage-calculater">
+    <div class="mortgage-calculator">
       <div class="left">
         <div class="header">
           <h2>Mortgage Calculator</h2>
-          <button class="clear-all">Clear All</button>
+          <button class="clear-all" id="clear-all">Clear All</button>
         </div>
 
         <form class="mortgage-form" id="mortgage-form">
@@ -67,12 +56,13 @@
 
               <div class="form-item">
                 <label for="mortgage-rate">Mortgage Rate</label>
-                <div class="form-flex" id="mortgage-term-main">
+                <div class="form-flex" id="mortgage-rate-main">
                   <input
                     type="number"
                     name="mortgage-rate"
                     id="mortgage-rate"
                     required
+                    step="0.01"
                   />
                   <p class="form-symbol">%</p>
                 </div>
@@ -86,34 +76,33 @@
           <div class="form-item">
             <label>Mortgage Type</label>
             <div class="radio-inputs">
-              <label for="repayment">
-                <input
-                  type="radio"
-                  name="repayment"
-                  id="repayment"
-                  value="repayment"
-                  required
-                />
-                <label for="repayment">Repayment</label>
-              </label>
+              <input
+                type="radio"
+                name="mortgage-type"
+                id="repayment"
+                class="mortgage-type"
+                value="repayment"
+                required
+              />
+              <label for="repayment">Repayment</label>
             </div>
 
             <div class="radio-inputs">
-              <label for="interest-only">
-                <input
-                  type="radio"
-                  name="interest-only"
-                  id="interest-only"
-                  value="interest-only"
-                  required
-                />
-                <label for="interest-only">Interest Only</label>
-              </label>
+              <input
+                type="radio"
+                name="mortgage-type"
+                id="interest-only"
+                value="interest-only"
+                class="mortgage-type"
+                required
+              />
+              <label for="interest-only">Interest Only</label>
             </div>
+            <p class="form-alert" id="type-alert">This field is required</p>
           </div>
 
           <div class="form-item">
-            <button type="button">
+            <button type="button" class="calculate-btn" id="calculate-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -132,7 +121,7 @@
         </form>
       </div>
       <div class="right">
-        <div class="default-text">
+        <div class="default-text" id="default-text">
           <img src="assets/images/illustration-empty.svg" />
           <h2>Results shown here</h2>
           <p>
@@ -141,7 +130,7 @@
           </p>
         </div>
 
-        <div class="calculation-container">
+        <div class="calculation-container" id="calculation-container">
           <h2>Your results</h2>
           <p>
             Your results are shown below based on the information you provided.
@@ -152,15 +141,17 @@
           <div class="calculation">
             <div class="monthly">
               <p>Your monthly repayments</p>
-              <div class="monthly-repayment"></div>
+              <div class="monthly-repayment" id="monthly-repayment"></div>
             </div>
+            <div class="line"></div>
             <div class="term">
               <p>Total you'll repay over the term</p>
-              <div class="term-result"></div>
+              <div class="term-result" id="term-result"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
